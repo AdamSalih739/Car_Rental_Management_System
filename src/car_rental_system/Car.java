@@ -1,10 +1,11 @@
-package car_rental_system;
+
+package coe318.lab7;
 
 public class Car extends Vehicle {
     private boolean automatic;
 
     public Car(String plateNumber, String model, int year, boolean automatic) {
-        // TO DO  ➜ completed
+        // TO DO
         super(plateNumber, model, year);
         this.automatic = automatic;
     }
@@ -16,25 +17,28 @@ public class Car extends Vehicle {
     // Overriding toString
     @Override
     public String toString() {
-        return "Car: " + super.toString()
-                + (automatic ? " [Automatic]" : " [Manual]");
+        return "Car: " + super.toString() +
+               (automatic ? " [Automatic]" : " [Manual]");
     }
 
+    
     @Override
     public double calculateRentalPrice(int days) {
-        // TO DO  ➜ completed
-        // Daily rate: 65.0 for automatic, 55.0 for manual
-        double dailyRate = automatic ? 65.0 : 55.0;
-        return dailyRate * days;
+        //TO DO. complete the code such that Daily Rate for automatic cars are 65.0 an for non automatic cars are 55.0. 
+        if (automatic) {
+            return 65.0*days;
+        } else {
+            return 55.0*days;
+        }
     }
 
+  
     @Override
     public double calculateInsurancePremium(int days) {
-        // TO DO  ➜ completed
-        // Daily insurance = base insurance rate increased by 10%
-        double dailyInsurance = getBaseInsuranceRate() * 1.10;
-        return dailyInsurance * days;
+        // TO DO. complete the code, such that daily insurence rate to be the vehicle’s base, increased by 10%
+        return getBaseInsuranceRate()*1.10 * days;
     }
+
 
     // Overloaded version with GPS option
     public double calculateRentalPrice(int days, boolean gpsIncluded) {
@@ -49,4 +53,5 @@ public class Car extends Vehicle {
     public static void printVehicleType() {
         System.out.println("Car");
     }
+    
 }

@@ -1,12 +1,12 @@
-package car_rental_system;
 
-public class Truck extends Vehicle {
+package coe318.lab7;
+
+public class Truck  extends Vehicle {
     private double loadCapacityInTons;
 
     public Truck(String plateNumber, String model, int year, double loadCapacityInTons) {
-        // call superclass constructor and set field
-        super(plateNumber, model, year);
-        this.loadCapacityInTons = loadCapacityInTons;
+      super(plateNumber, model, year);
+      this.loadCapacityInTons = loadCapacityInTons;
     }
 
     public double getLoadCapacityInTons() {
@@ -15,25 +15,24 @@ public class Truck extends Vehicle {
 
     @Override
     public String toString() {
-        return "Truck: " + super.toString()
-                + " [Capacity: " + loadCapacityInTons + " tons]";
+        return "Truck: " + super.toString() +
+               " [Capacity: " + loadCapacityInTons + " tons]";
     }
 
     @Override
     public double calculateRentalPrice(int days) {
-        // Daily rate starts at 90 and increases by 10 for each ton
-        double dailyRate = 90.0 + 10.0 * loadCapacityInTons;
-        return dailyRate * days;
+        // TO DO  when a daily rate starts at 90 dollars and increases by 10 dollars for each ton of load capacity.
+        return (90 + 10*loadCapacityInTons)*days;
     }
 
     @Override
     public double calculateInsurancePremium(int days) {
-        // Daily insurance = base insurance rate increased by 50%
-        double dailyInsurance = getBaseInsuranceRate() * 1.50;
-        return dailyInsurance * days;
+       // TO Do: the daily rate is the base insurance rate increased by 50 percent
+       return getBaseInsuranceRate() * 1.50 * days;
     }
 
     public static void printVehicleType() {
         System.out.println("Truck");
     }
+    
 }

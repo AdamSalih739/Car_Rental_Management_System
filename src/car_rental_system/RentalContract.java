@@ -1,7 +1,8 @@
-package car_rental_system;
+
+package coe318.lab7;
 
 public class RentalContract {
-    private Rentable rentable;
+    private Rentable rentable;        
     private int days;
     private boolean insuranceAdded;
 
@@ -12,13 +13,10 @@ public class RentalContract {
     }
 
     public double calculateTotalPrice() {
-        // TO DO  ➜ completed
-        // Base price uses the Rentable's own implementation (polymorphism)
-        double basePrice = rentable.calculateRentalPrice(days);
+        double basePrice = rentable.calculateRentalPrice(days); //To DO. Complete this line of the code, such that the baseprice is found.
         double insurance = 0.0;
 
         if (insuranceAdded) {
-            // Cast to Insurable to access insurance calculation
             insurance = ((Insurable) rentable).calculateInsurancePremium(days);
         }
 
@@ -34,3 +32,4 @@ public class RentalContract {
         System.out.println("===============================");
     }
 }
+

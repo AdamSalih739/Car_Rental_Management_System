@@ -1,7 +1,6 @@
-package car_rental_system;
 
-public interface Insurable {
+package coe318.lab7;
 
+public interface Insurable { 
     double calculateInsurancePremium(int days);
-
 }

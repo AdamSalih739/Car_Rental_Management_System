@@ -1,10 +1,11 @@
-package car_rental_system;
+
+package coe318.lab7;
 
 public class Vehicle implements Insurable, Rentable {
     private String plateNumber;
     private String model;
     private int year;
-    final private double DefaultRentPrice = 100;
+    final private double DefaultRentPrice=100;
 
     public Vehicle(String plateNumber, String model, int year) {
         this.plateNumber = plateNumber;
@@ -23,15 +24,16 @@ public class Vehicle implements Insurable, Rentable {
     public int getYear() {
         return year;
     }
-
     public String toString() {
         return year + " " + model + " (" + plateNumber + ")";
     }
 
+    
     @Override
-    public double calculateRentalPrice(int days) {
-        return DefaultRentPrice * days;
+    public double calculateRentalPrice(int days){
+        return(DefaultRentPrice*days);
     }
+
 
     @Override
     public double calculateInsurancePremium(int days) {
